@@ -74,6 +74,7 @@ class Optimizer():
                 accuracy_n = util.calculate_accuracy_mean(n=np.array(n), n_hat=np.array(n_saver))
                 loss_value_instance.append(loss_value)
                 accuracy_n_instance.append(accuracy_n)
+                print("Instance complete")
             self.overall_loss.append(np.mean(loss_value_instance))
             self.overall_accuracy_n.append(np.mean(accuracy_n_instance))
             self.model.save_model(directory=self.args.dir_models + self.args.model_name, count=epoch)

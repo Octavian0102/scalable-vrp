@@ -20,6 +20,8 @@ if __name__ == "__main__":
     args = config.parser.parse_args()
     args.pchgs_executable = str(next(Path("../pchgs/build").rglob("PCHGS*")))
     args = get_model_name(args)
+
+    print(args.dir_models)
     util.create_directories([args.dir_models])
     print(args)
 
@@ -31,6 +33,7 @@ if __name__ == "__main__":
 
     # calculate features for training instances
     training_instances = create_features(args, training_instances)
+    print(f"Number of instances: {len(training_instances)}")
 
     # initalize optimizer
     optim = Optimizer(args=args, num_features=training_instances[0]["features"].shape[1], num_edge_features=training_instances[0]["edge_features"].shape[1])

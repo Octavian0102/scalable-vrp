@@ -8,6 +8,12 @@
 # JetBrains
 /.idea
 
+# pycache
+__pycache__/
+
+# output files
+*.out
+
 # other stuff
 # Default ignored files
 /shelf/
